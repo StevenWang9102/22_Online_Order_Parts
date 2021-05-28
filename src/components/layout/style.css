@@ -1,0 +1,47 @@
+/* All customised styles are here */
+
+a{
+    color: rgb(109,140,125) !important;
+}
+
+a:hover{
+    color: #1890ff !important;
+}
+
+.ant-spin-dot-item {
+    background-color: white;
+}
+
+.MuiIconButton-root {
+    background-color: inherit !important;
+}
+
+.MuiTableRow-root:not(:first-of-type):hover,
+.MuiTableRow-root:not(:first-of-type)[mode='add'],
+.MuiTableRow-root:not(:first-of-type)[mode='update'] {
+    background-color: #dcdcdc52;
+}
+
+body{
+    font-size:14px ;
+}
+
+h1{
+    font-size: 40px ;
+}
+h2{
+    font-size: 34px ;
+}
+h3{
+    font-size: 28px ;
+}
+h4{
+    font-size: 24px ;
+}
+h5{
+    font-size: 18px ;
+}
+.ant-typography code {
+    background-color: #1890ff;
+    padding: 0.5rem;
+}

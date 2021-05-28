@@ -1,0 +1,47 @@
+import React from 'react'
+import { imgStringToArray } from './common-edit-image-component'
+import { Upload } from 'antd'
+
+interface CommonRenderComponentPropsInterface {
+  formItems: any
+  restFormItems?: any
+}
+
+const CommonRenderComponent = (props: CommonRenderComponentPropsInterface):any => {
+  return (
+    <div>
+      {
+        props.formItems.map((row: any, index: number) => {
+          return (
+            row.type === 'image' ?
+              <div key={index}>
+                <Upload
+                  listType="picture"
+                  fileList={[...imgStringToArray(row.value)]}
+                  disabled
+                >
+                </Upload>
+              </div>
+              :
+              (row?.value === 0 || row?.value) && (
+                <div key={index}>
+                  {row.label.replace(/\s/, '\u00a0') ? (
+                    <span>
+                      <b>
+                        {row.label.replace(/\s/, '\u00a0')}:
+                      </b>
+                        &nbsp;
+                    </span>
+                  ) : null}
+                  {row.value}
+                </div>
+              )
+          )
+        })
+      }
+      { props.restFormItems?.map((row: any) => row)}
+    </div>
+  )
+}
+
+export default CommonRenderComponent
